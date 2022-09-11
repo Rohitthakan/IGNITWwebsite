@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: rgb(35, 35, 85);
+    }
+
+    span {
+        font-size: .9rem;
+        color: #757373;
+    }
+
+    h6 {
+        font-size: 1.1rem;
+        color: rgb(24, 24, 49);
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.3vw 1vw;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+    }
+
+    nav a img {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 65px;
+        cursor: pointer;
+        border-radius: 15px;
+        margin-left: 10px;
+        margin-top: 8px;
+    }
+
+    nav .navigation {
+        display: flex;
+    }
+
+    nav .navigation ul {
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 30px 50px;
+    }
+
+    nav .navigation ul li {
+        list-style: none;
+        margin-left: 50px;
+    }
+
+    nav .navigation ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s ease;
+    }
+
+    nav::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    nav .navigation ul li a.active,
+    nav .navigation ul li a:hover {
+        color: #fdc938;
+    }
+
+    nav .navigation .logo2 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-right: 687px;
+        margin-top: 7px;
+    }
+
+    nav .navigation ol .logo2 a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav .navigation ol .logo2 a:hover {
+        color: #fdc938;
+    }
+
+    /* Home */
+    #home {
+        background-image: url("startupbackgr.png");
+        width: 100%;
+        height: 100vh;
+        color: white;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    #home h2 {
+        color: rgb(12, 12, 238);
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    #home p {
+        width: 50%;
+        color: rgb(238, 12, 12);
+        font-size: 1.2rem;
+        line-height: 25px;
+    }
+
+    #home a {
+        text-decoration: none;
+        font-size: 00.9rem;
+        padding: 13px 35px;
+        background-color: #fff;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    #home .btn {
+        margin: 30px;
+    }
+
+    #home a.blue {
+        color: #fff;
+        background: rgb(21, 21, 100);
+        transition: 0.3s ease;
+    }
+
+    #home a.blue:hover {
+        color: rgb(21, 21, 100);
+        background: #fff;
+    }
+
+    #home a.yellow {
+        color: #fff;
+        background: #fdc938;
+        transition: 0.3s ease;
+    }
+
+    #home a.yellow:hover {
+        color: #fdc938;
+        background: #fff;
+    }
+
+    /* About */
+    .stups {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #101c32;
+        padding-top: 30px;
+        color: #fff;
+        padding-bottom: 30px;
+
+    }
+    section2 h3{
+        background: #300620;
+        color: #fdc938;
+        font-size: 25px;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+
+    section2 div{
+        display: flex;
+        flex-direction: row;
+        background: #300620;
+        padding-left: 50px;
+    }
+    .team p{
+        color: #fff;
+        padding-top: 20px; 
+        padding-right: 300px;
+    }
+    .team img{
+        width: 15%;
+        border-radius: 12px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+    }
+    .teams p{
+        color: #fff;
+        padding-top: 20px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+        padding-left: 100px;
+    }
+    .teams img{
+        width: 13%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(67, 7, 7);
+        padding-top: 30px;
+        color: #fff;
+        padding-bottom: 30px;
+
+    }
+
+    footer {
+        padding: 4vw;
+        background-color: rgb(67, 7, 7);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    footer .foot {
+        padding-bottom: 0px;
+    }
+
+    footer .foot img {
+        width: 40%;
+        border-radius: 15px;
+        margin-left: 40px;
+    }
+
+    footer .foot li {
+        color: #fff;
+        margin-top: 25px;
+    }
+
+    footer .foot li:hover {
+        color: #fdc938;
+    }
+
+    footer h2 {
+        color: rgb(241, 240, 245);
+        font-weight: 600;
+        padding-bottom: 15px;
+        padding-left: 0px;
+        margin-top: 70px;
+    }
+
+    footer h3 {
+        list-style: none;
+        color: #7b838a;
+        padding: 4px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: .3s ease;
+    }
+
+    footer div p {
+        margin-top: 150px;
+        margin-left: 450px;
+        color: #7b838a;
+
+    }
+
+    footer h3:hover {
+        color: #fdc938;
+    }
+
+    #icon1 {
+        width: 5%;
+        padding-top: 25px;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+
+    #icon2 {
+        width: 5%;
+        border-radius: 35px;
+        cursor: pointer;
+    }
+
+    #icon3 {
+        width: 5%;
+    }
+
+    #icon4 {
+        width: 5%;
+    }
+
+    .copy li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        margin-top: 70px;
+        margin-left: 450px;
+    }
+
+    .copy li:hover {
+        color: #fdc938;
+    }
+
+    #media img {
+        margin: 10px 65px;
+    }
+</style>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://nitw.ac.in/cii/">
+            <img src="iglogo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ol>
+                <li class="logo2"><a href="#">THINK</a></li>
+                <li class="logo2"><a href="#">CREATE</a></li>
+                <li class="logo2"><a href="#">INNOVATE</a></li>
+            </ol>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a class="active" href="#">STARTUPS</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home -->
+
+    <section id="home">
+        <h2>Ideas are commodity. Execution Of Them Is Not</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eos excepturi nostrum, aliquid, illo quae
+            maiores ipsum delectus quam et inventore id nihil quia assumenda quibusdam culpa magnam ab. Explicabo?</p>
+        <div class="btn">
+            <a class="blue" href="https://nitw.ac.in/cii/">Learn More</a>
+            <a class="yellow" href="registrationform.html">Give Idea</a>
+        </div>
+    </section>
+
+    <h1 class="stups">STARTUPS</h1>
+    <hr>
+    <section2>
+        <h3>SKYLARK LABS</h3>
+        <div class="team">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+             <img src="skylab.png" alt="">
+        </div>
+        <h3>CUSMAT TECHNOLOGIES</h3>
+        <div class="teams">
+            <img src="cusmat.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+       </div>
+       <h3>ARCHPHILLIC</h3>
+        <div class="team">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+             <img src="phillic.png" alt="">
+        </div>
+        <h3>EPICK BIKES</h3>
+        <div class="teams">
+            <img src="epick.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+       </div>
+       <h3>KALAM NOTEBOOKS</h3>
+        <div class="team">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+             <img src="kalam.png" alt="">
+        </div>
+        <h3>GBit STUDIOS</h3>
+        <div class="teams">
+            <img src="gbit.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+       </div>
+       <h3>FLOWHREX TECHNOLOGIES</h3>
+        <div class="team">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veritatis cum perspiciatis nisi voluptatum! Fugiat quod odit pariatur similique laudantium quibusdam accusamus nemo esse saepe, ipsum ut minus earum explicabo quisquam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, labore sapiente dolores, odio id, autem mollitia voluptatum cumque quam fuga cum! Quisquam laboriosam quibusdam et quia omnis impedit perferendis.</p>
+             <img src="flow.png" alt="">
+        </div>
+    </section2>
+
+    <!-- footer -->
+    <h1 class="contact">CONTACT US</h1>
+    <hr>
+    <footer>
+        <div class="foot">
+            <a href="https://www.nitw.ac.in/">
+                <img src="iglogo2.png" alt="">
+            </a>
+        </div>
+
+        <div class="foot">
+            <h2>INNOVATION GARAGE</h2>
+            <h3>CENTER FOR INNOVATION INCUBATION</h3>
+            <h3>EXPLORE VARIOUS DOMAINS</h3>
+            <h3>INNOVATE YOUR IDEAS</h3>
+        </div>
+        <div class="foot">
+            <h2>NIT, Warangal</h2>
+            <h3>Hanumakonda-506 004,Telangana State, INDIA</h3>
+            <h3>hod_cii@student.nitw.ac.in</h3>
+            <h3>ig-nitw@student.nitw.ac.in</h3>
+        </div>
+        <div class="foot" id="media">
+            <a href="https://www.facebook.com/TheInnovationGarage/">
+                <img id="icon1" src="mediaicon1.png" alt="">
+            </a>
+            <a href="https://www.instagram.com/ig.nitw/?hl=en">
+                <img id="icon2" src="mediaicon2.png" alt="">
+            </a>
+            <a href="https://twitter.com/warangal_nit?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                <img id="icon3" src="mediaicon3.png" alt="">
+            </a>
+            <a href="https://www.google.com/">
+                <img id="icon4" src="mediaicon4.png" alt="">
+            </a>
+            <a
+                href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5286499,17z/data=!3m1!4b1!4m5!3m4!1s0x3a334fbb37aee6c3:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386">
+                <img id="icon3" src="map.png" alt="">
+            </a>
+        </div>
+        <div class="copy">
+            <li>Copyright ©2022 All rights reserved | This template is made by Rohit</li>
+        </div>
+    </footer>
+</body>
+
+</html>
